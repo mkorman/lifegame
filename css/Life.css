@@ -1,0 +1,111 @@
+﻿body
+{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 16px;
+}
+
+h1,h2 {
+    text-align:center;
+    font-weight: bold;
+    margin: 2px;
+}
+
+h3 {
+    margin: 2px;
+}
+
+#userControls
+{
+    /*float:left;
+      width: 200px;*/
+    padding: 2px;
+    border-radius: 2px;
+    background-color: #E08B71;
+    margin-bottom: 5px;
+}
+
+#txtUpdateInterval {
+    width: 40px;
+}
+
+#updateIntervalSlider {
+    width: 100px;
+    display: inline-block;
+    height: 0.4em;
+}
+
+    #updateIntervalSlider .ui-slider-handle {
+        height:0.6em;
+        width: 0.4em;
+        top: -0.2em;
+        margin-left: -0.2em;
+
+    }
+
+#gameBoard {
+    float:left;
+    font-weight: bold;
+    /*margin-left: 5px;*/
+    border-radius: 3px;
+    padding: 10px;
+    border: solid #999999 1px;
+    font-size: 1.2em;
+}
+
+#saves {
+    float:left;
+    margin-left: 5px;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #E5A48A;
+}
+
+/* Angular JS Validation classes*/
+.saveForm input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.savegame {
+    border-radius: 3px;
+    padding: 10px;
+    margin: 3px;
+    background-color: whitesmoke;
+}
+
+    .savegame:hover {
+        background-color:#E08B71;
+    }
+
+.smalltext {
+    font-size: 0.8em;
+}
+.saveInput {
+    margin: 5px 2px;
+}
+.savegameDelete {
+    display: block;
+    float: right;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-color: darkgray
+    /*
+    color: gray;
+    padding-left: 7px;
+    padding-bottom: 2px;*/
+}
+
+table#board {
+    border: 1px solid#999999 ;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #cccccc;
+    height: 5px;
+    width: 5px;
+}
+
+td.liveCell {
+    background-color: #AC4339;
+}

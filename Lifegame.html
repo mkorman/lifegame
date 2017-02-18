@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="conwayLifeGame">
+<head>
+    <meta charset="utf-8" />
+    <title>Game of Life</title>
+    <link href="css/life.css" rel="stylesheet" type="text/css" />
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/Controllers.js"></script>
+</head>
+<body>
+    <div id="userControls">
+        <h2>Welcome to Conway's game of life</h2>
+        <input type="button" value="Step" onclick="javascript:Life.Step()" />
+        <input type="button" value="Start" id="btnAutoUpdate" />
+        <input type="button" value="Pause" onclick="javascript:Life.Pause()" />
+        Fast&nbsp;<div id="updateIntervalSlider"></div>&nbsp;Slow
+        <input type="button" value="Clear Board" onclick="javascript:Life.Clear()" />
+    </div>
+    <div id="gameBoard">
+        <table id="board"></table>
+    </div>
+    <div id="saves" ng-controller="SavesController">
+        <h3>Saved games</h3>
+        <span class="smalltext">Click on a save to load</span>
+            <div class="saveInput">
+                <form class="saveForm" novalidate>
+                    Save name: <input type="text" ng-model="save.name" name="uSaveName" required ng-/>
+                    <button name="Save" ng-click="addSaveGame(save)" ng-disabled="!save.name">Save</button><br />
+                    <div ng-show="save.name.$invalid">
+                        Please name your savegame.
+                    </div>
+                </form>
+            </div>
+        <div ng-repeat="save in saves" class="savegame" data-seed="{{save.seed}}" ng-click="loadSaveGame(save)">
+            {{save.name}}<a href="#" class="savegameDelete ui-corner-all ui-state-default ui-icon ui-icon-closethick" ng-click="deleteSaveGame(save)"></a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/Common.js"></script>
+    <script type="text/javascript" src="scripts/LifeGameCode.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#updateIntervalSlider").slider({
+                min: 50,
+                max: 1000,
+                value: 250,
+                change: function (event, ui)
+                {
+                    Life.RescheduleAutoStep(ui.value);
+                }
+            });
+            $("#btnAutoUpdate").click(function () {
+                Life.AutoStep($("#updateIntervalSlider").slider("value"));
+            });
+            // Load board from seed supplied in the URL
+            var seed = Common.UrlParams["seed"];
+            if (seed !== undefined) {
+                Life.Load(seed);
+            }
+        });
+    </script>
+</body>
+
+</html>
