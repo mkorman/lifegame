@@ -62,7 +62,7 @@ h3 {
 }
 
 #board td.live {
-    background-color: #AC4339;
+    background-color: /*#AC4339*/red;
 }
 
 #saves {

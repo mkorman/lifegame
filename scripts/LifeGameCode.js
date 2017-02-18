@@ -128,7 +128,7 @@ Life.GrowCellInDom = function (x, y) {
     $("#gameBoard tr:nth-child(" + y + ") td:nth-child(" + x + ")").addClass("live");
 };
 
-// Initial board rendering. Re-creates the DOM table
+// Initial board rendering. Re-creates the table DOM
 Life.Render = function (tableId) {
 
     var i, j, innerText = '';
