@@ -21,7 +21,7 @@ Life.Reset = function () {
     }
 
     // Remove visual rendering
-    $("#gameBoard .liveCell").removeClass("liveCell");
+    $("#gameBoard .liveCell").removeClass("live");
 };
 
 // Grows a cell, making it live
@@ -116,7 +116,7 @@ Life.KillCellInDom = function (x, y) {
     x++;
     y++;
 
-    $("#gameBoard tr:nth-child(" + y + ") td:nth-child(" + x + ")").removeClass("liveCell");
+    $("#gameBoard tr:nth-child(" + y + ") td:nth-child(" + x + ")").removeClass("live");
 };
 
 Life.GrowCellInDom = function (x, y) {
@@ -125,7 +125,7 @@ Life.GrowCellInDom = function (x, y) {
     x++;
     y++;
 
-    $("#gameBoard tr:nth-child(" + y + ") td:nth-child(" + x + ")").addClass("liveCell");
+    $("#gameBoard tr:nth-child(" + y + ") td:nth-child(" + x + ")").addClass("live");
 };
 
 // Initial board rendering. Re-creates the DOM table
@@ -142,7 +142,7 @@ Life.Render = function (tableId) {
         {
             // 
             if (Life.IsCellLive(j, i)) {
-                innerText += '<td class="liveCell"></td>';
+                innerText += '<td class="live"></td>';
             }
             else {
                 innerText += "<td></td>";

@@ -1,16 +1,15 @@
-﻿<!DOCTYPE html>
-<html lang="en" ng-app="conwayLifeGame">
+﻿<html ng-app="conwayLifeGame">
 <head>
     <meta charset="utf-8" />
     <title>Game of Life</title>
     <link href="css/life.css" rel="stylesheet" type="text/css" />
     <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/Controllers.js"></script>
-</head>
-<body>
     <div id="userControls">
         <h2>Welcome to Conway's game of life</h2>
         <input type="button" value="Step" onclick="javascript:Life.Step()" />

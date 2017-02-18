@@ -16,8 +16,6 @@ h3 {
 
 #userControls
 {
-    /*float:left;
-      width: 200px;*/
     padding: 2px;
     border-radius: 2px;
     background-color: #E08B71;
@@ -45,11 +43,26 @@ h3 {
 #gameBoard {
     float:left;
     font-weight: bold;
-    /*margin-left: 5px;*/
     border-radius: 3px;
     padding: 10px;
     border: solid #999999 1px;
     font-size: 1.2em;
+}
+
+#board {
+    border: 1px solid #999999;
+    border-collapse: collapse;
+}
+
+#board td {
+    border: 1px solid #cccccc;
+    height: 6px;
+    width: 6px;
+    padding: 0px;
+}
+
+#board td.live {
+    background-color: #AC4339;
 }
 
 #saves {
@@ -89,23 +102,4 @@ h3 {
     width: 20px;
     height: 20px;
     background-color: darkgray
-    /*
-    color: gray;
-    padding-left: 7px;
-    padding-bottom: 2px;*/
-}
-
-table#board {
-    border: 1px solid#999999 ;
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid #cccccc;
-    height: 5px;
-    width: 5px;
-}
-
-td.liveCell {
-    background-color: #AC4339;
 }
